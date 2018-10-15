@@ -1,0 +1,17 @@
+Value ap_name (\S+)
+Value slot (\S+)
+Value ap_model (\S+)
+Value mac (\S+)
+Value loc (((?!\s{2}).)*)
+Value country (\S+)
+Value ip (\S+)
+Value clients (\S+)
+Value dseloc ([\[\] ,0-9]+)
+
+
+Start
+  ^---.* -> Begin
+
+
+Begin
+  ^${ap_name}\s+${slot}\s+${ap_model}\s+${mac}\s+${loc}\s+${country}\s+${ip}\s+${clients}\s+${dseloc} -> Record
